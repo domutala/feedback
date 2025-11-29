@@ -1,0 +1,98 @@
+{
+  "editor": {
+    "titleField": {
+      "title": "Quel titre souhaitez-vous donner à votre demande d’avis ?",
+      "placeholder": "Exemple : Votre opinion nous aide à nous améliorer"
+    },
+
+    "comment": {
+      "title": "Souhaitez-vous demander un message après la note ?",
+
+      "items": {
+        "notRequired": "Oui, mais non requis",
+        "required": "Oui, obligatoirement",
+        "no": "Non merci"
+      }
+    },
+
+    "count": {
+      "title": "Combien d’avis souhaitez-vous collecter ?",
+      "items": {
+        "one": "Un seul avis",
+        "multiple": "Collecter plusieurs avis"
+      }
+    },
+
+    "addtionalInformations": {
+      "title": "Quelles informations supplémentaires souhaitez-vous collecter auprès de vos clients ?",
+      "required": "Obligatoire",
+      "items": {
+        "name": "Nom de la personne",
+        "email": "Adresse email",
+        "phone": "Numéro de téléphone",
+        "address": "Adresse",
+        "comment": "Commentaire"
+      }
+    },
+
+    "user": {
+      "title": "Votre adresse email"
+    },
+
+    "errors": {
+      "title": {
+        "string": "Le titre doit être un texte.",
+        "max": "Le titre ne doit pas dépasser 50 caractères."
+      },
+      "count": {
+        "number": "Veuillez renseigner correctment le nombre d'avis que vous voulez collecter.",
+        "int": "Veuillez renseigner correctment le nombre d'avis que vous voulez collecter."
+      },
+
+      "other": "Une erreur innatendue est survenue. Veuillez vérifier les informations saisies",
+
+      "user": { "email": "Votre adresse email est incorrecte." }
+    },
+
+    "submit": "Enregistrer"
+  },
+
+  "rate": {
+    "one": {
+      "submit": "Envoyer"
+    },
+
+    "errors": {
+      "name": {
+        "required": "Veuillez saisir votre nom"
+      }
+    },
+
+    "prevent": "Revenir en arrière",
+    "next": "Suivant",
+    "submit": "Envoyer"
+  },
+
+  "reactions": [
+    {
+      "title": "Très mauvais",
+      "description": "L’expérience est insatisfaisante et ne répond pas aux attentes."
+    },
+    {
+      "title": "Mauvais",
+      "description": "Plusieurs problèmes rencontrés, résultat en dessous de la moyenne."
+    },
+    {
+      "title": "Moyen",
+      "description": "Acceptable, mais nécessite plusieurs améliorations."
+    },
+    {
+      "title": "Bon",
+      "description": "Globalement satisfaisant, avec quelques points perfectibles."
+    },
+    {
+      "title": "Excellent",
+      "description": "Expérience excellente, dépasse les attentes."
+    }
+  ]
+}

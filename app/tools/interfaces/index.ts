@@ -1,0 +1,12 @@
+export type FeedbackModel = {
+  name: boolean;
+  name_required: boolean;
+  email: boolean;
+  email_required: boolean;
+  phone: boolean;
+  phone_required: boolean;
+  address: boolean;
+  address_required: boolean;
+  comment: "notRequired" | "required" | "no";
+  count: number | null;
+};

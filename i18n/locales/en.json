@@ -1,0 +1,157 @@
+{
+  "welcome": "Welcome",
+
+  "dashboard": {
+    "empty": "No job openings to post"
+  },
+
+  "errors": {
+    "fieldRequired": "This field is required",
+    "invalidEmail": "Invalid email address"
+  },
+
+  "sectors": {
+    "agriculture": "Agriculture",
+    "food_industry": "Food Industry",
+    "construction": "Construction",
+    "manufacturing": "Manufacturing",
+    "energy": "Energy",
+    "it_technology": "Information Technology",
+    "telecommunications": "Telecommunications",
+    "finance_insurance": "Finance and Insurance",
+    "real_estate": "Real Estate",
+    "wholesale_retail": "Wholesale and Retail",
+    "transport_logistics": "Transport and Logistics",
+    "hospitality_tourism": "Hospitality and Tourism",
+    "healthcare": "Healthcare",
+    "education": "Education",
+    "public_administration": "Public Administration",
+    "research_development": "Research and Development",
+    "arts_entertainment": "Arts, Culture and Entertainment",
+    "environment": "Environment",
+    "non_profit": "Non-Profit Organizations",
+    "consulting_services": "Consulting and Business Services"
+  },
+
+  "register": {
+    "goback": "Go Back",
+
+    "login": {
+      "btn": "Log In"
+    },
+
+    "success": {
+      "title": "Account successfully created! Welcome to Wink 🎉",
+      "description": "Manage your recruitments efficiently and start finding top talent now."
+    },
+
+    "errors": {
+      "userWithEmailAlreadyExists": "A user with this email already exists",
+      "global": "An error occurred while processing your request. Please check the information provided"
+    },
+
+    "one": {
+      "title": "Let's get to know you",
+      "submit": "Continue",
+
+      "items": {
+        "email": "Email address",
+        "firstName": "First Name",
+        "lastName": "Last Name",
+
+        "password": {
+          "label": "Password",
+
+          "errors": {
+            "type": "The entered password is incorrect"
+          }
+        },
+
+        "avatar": {
+          "label": "Profile Picture",
+          "add": "Add Photo",
+          "update": "Update Photo",
+          "remove": "Remove",
+          "info": "in *.png or *.jpeg format, max 5MB",
+
+          "errors": {
+            "type": "Please select a JPEG or PNG file.",
+            "size": "Maximum size exceeded. Max 5MB"
+          }
+        }
+      }
+    },
+
+    "two": {
+      "title": "Create Your Space",
+      "submit": "Continue",
+      "items": {
+        "name": {
+          "label": "Company Name",
+          "placeholder": "Enter your company name"
+        },
+
+        "description": {
+          "label": "Company Description",
+          "placeholder": "Briefly describe your company:\n * History and key figures\n * Products or services offered\n * Culture and values"
+        },
+
+        "website": {
+          "label": "Website",
+          "placeholder": "your-company.com",
+          "errors": {
+            "type": "Invalid URL"
+          }
+        },
+
+        "address": {
+          "label": "Headquarters Address",
+          "placeholder": "Enter your company address"
+        },
+
+        "sector": {
+          "label": "Industry Sector",
+          "placeholder": "Enter your company's sector"
+        },
+
+        "logo": {
+          "label": "Company Logo",
+          "add": "Add Photo",
+          "update": "Update Photo",
+          "remove": "Remove",
+          "info": "in *.png or *.jpeg format",
+
+          "errors": {
+            "type": "Please select a JPEG or PNG file.",
+            "size": "Maximum size exceeded. Max 5MB"
+          }
+        }
+      }
+    },
+
+    "three": {
+      "title": "To Know You Better"
+    }
+  },
+
+  "login": {
+    "title": "Welcome to Wink",
+    "description": "Enter your credentials to access your account.",
+    "submit": "Log In",
+
+    "errors": {
+      "invalidCredentials": "The entered credentials are incorrect",
+      "global": "An error occurred while processing your request. Please check the information provided"
+    },
+
+    "register": {
+      "text": "Don't have an account?",
+      "btn": "Sign Up"
+    },
+
+    "items": {
+      "email": "Email address",
+      "password": "Password"
+    }
+  }
+}

@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+@import "tailwindcss" theme(static) source("../../../..");
+@import "@nuxt/ui";
+
+
+@theme {
+    --font-sans: 'Poppins', sans-serif;
+
+    --color-blue-ribbon: oklch(58.664% 0.22698 258.96);
+    --color-blue-ribbon-50: oklch(87.196% 0.06418 253.55);
+    --color-blue-ribbon-100: oklch(83.397% 0.08424 254.17);
+    --color-blue-ribbon-200: oklch(76.478% 0.12267 254.02);
+    --color-blue-ribbon-300: oklch(69.794% 0.16089 255.18);
+    --color-blue-ribbon-400: oklch(63.903% 0.19582 256.35);
+    --color-blue-ribbon-500: oklch(58.664% 0.22698 258.96);
+    --color-blue-ribbon-600: oklch(49.016% 0.18631 258.59);
+    --color-blue-ribbon-700: oklch(38.871% 0.14329 257.9);
+    --color-blue-ribbon-800: oklch(28.021% 0.09673 256.29);
+    --color-blue-ribbon-900: oklch(16.032% 0.04385 248.66);
+    --color-blue-ribbon-950: oklch(6.5534% 0.0175 247.65);
+}
