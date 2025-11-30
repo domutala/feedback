@@ -23,6 +23,7 @@
     "@pinia/nuxt": "^0.11.3",
     "bcryptjs": "^3.0.3",
     "drizzle-orm": "^0.44.7",
+    "lodash": "^4.17.21",
     "nuxt": "^4.2.1",
     "pg": "^8.16.3",
     "pinia-plugin-persistedstate": "^4.7.1",

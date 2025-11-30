@@ -24,7 +24,8 @@ const model = ref<FeedbackModel>({
 
   count: null,
 });
-const email = ref("");
+const email = ref([""]);
+const title = ref<string>();
 
 const commentItems = ref<RadioGroupItem[]>([
   {
@@ -57,11 +58,14 @@ const countItems = ref<RadioGroupItem[]>([
   },
 ]);
 
+const submiting = ref(false);
 async function submit() {
+  submiting.value = true;
+
   try {
     await $fetch("/api/admin/model", {
       method: "post",
-      body: { model: model.value, email: email.value },
+      body: { data: model.value, emails: email.value, title: title.value },
     });
     console.log("55555");
   } catch (e: any) {
@@ -75,6 +79,8 @@ async function submit() {
         });
       }
     }
+  } finally {
+    submiting.value = false;
   }
 }
 </script>
@@ -89,6 +95,7 @@ async function submit() {
           </p>
 
           <u-textarea
+            v-model="title"
             class="w-full text-2xl"
             :placeholder="$t('editor.titleField.placeholder')"
             :ui="{ base: 'text-2xl' }"
@@ -162,7 +169,7 @@ async function submit() {
           </p>
 
           <UFormField name="name" required>
-            <UInput class="w-full" size="xl" type="email" v-model="email" />
+            <UInput class="w-full" size="xl" type="email" v-model="email[0]" />
           </UFormField>
         </div>
 
@@ -171,6 +178,7 @@ async function submit() {
           color="neutral"
           class="cursor-pointer"
           :disabled="!email"
+          :loading="submiting"
           @click="submit"
         >
           {{ $t("editor.submit") }}

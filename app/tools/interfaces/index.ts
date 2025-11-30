@@ -10,3 +10,11 @@ export type FeedbackModel = {
   comment: "notRequired" | "required" | "no";
   count: number | null;
 };
+
+export type FeedbackData = {
+  rate: number;
+  name?: string;
+  email?: string;
+  phone?: string;
+  comment?: string;
+};

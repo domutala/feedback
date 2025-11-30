@@ -1,7 +1,7 @@
 import * as z from "zod";
 import type { FeedbackModel } from "./interfaces";
 
-export function stepTwoValidator(
+export function additionalValidator(
   model: FeedbackModel,
   translator: (label: string) => string
 ) {
@@ -36,6 +36,16 @@ export function stepTwoValidator(
       value: z.transform((v) => (v === "" ? undefined : v)).pipe(v),
     });
   }
+
+  const obj = Object.fromEntries(schema.map(({ key, value }) => [key, value]));
+  return obj;
+}
+
+export function commentValidator(
+  model: FeedbackModel,
+  translator: (label: string) => string
+) {
+  const schema = [];
 
   if (model.comment !== "no") {
     let v = z

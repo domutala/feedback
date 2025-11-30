@@ -30,8 +30,7 @@
         "name": "Nom de la personne",
         "email": "Adresse email",
         "phone": "Numéro de téléphone",
-        "address": "Adresse",
-        "comment": "Commentaire"
+        "address": "Adresse"
       }
     },
 
@@ -51,6 +50,8 @@
 
       "other": "Une erreur innatendue est survenue. Veuillez vérifier les informations saisies",
 
+      "rate": "La note doit être comprise entre 1 et 5. Merci de choisir une valeur valide.",
+
       "user": { "email": "Votre adresse email est incorrecte." }
     },
 
@@ -58,14 +59,24 @@
   },
 
   "rate": {
-    "one": {
-      "submit": "Envoyer"
+    "labels": {
+      "name": "VOtre nom",
+      "email": "Adresse email",
+      "phone": "Numéro de téléphone",
+      "address": "Adresse",
+      "comment": "Message"
     },
 
     "errors": {
+      "modelNotFound": "L'avis que vous souhaitez soumettre est introuvable",
+
       "name": {
         "required": "Veuillez saisir votre nom"
       }
+    },
+
+    "success": {
+      "message": "Nous vous remercions sincèrement pour votre avis. Votre contribution a bien été prise en compte et nous aidera à améliorer nos services."
     },
 
     "prevent": "Revenir en arrière",

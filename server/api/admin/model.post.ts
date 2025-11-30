@@ -34,7 +34,7 @@ export default defineEventHandler(async (event) => {
     address_required: z.boolean("editor.errors.aother").optional(),
   });
 
-  const result = validator.safeParse(body.model);
+  const result = validator.safeParse(body.data);
   if (result.error) {
     throw createError({
       statusCode: 400,
@@ -42,7 +42,7 @@ export default defineEventHandler(async (event) => {
     });
   }
 
-  const r2 = z.email("editor.errors.user.email").safeParse(body.email);
+  const r2 = z.email("editor.errors.user.email").array().safeParse(body.emails);
   if (r2.error) {
     throw createError({
       statusCode: 400,
@@ -50,5 +50,50 @@ export default defineEventHandler(async (event) => {
     });
   }
 
-  return { okay: true };
+  const r3 = z.string("editor.errors.title").optional().safeParse(body.title);
+  if (r3.error) {
+    throw createError({
+      statusCode: 400,
+      data: { zod: r3.error.message },
+    });
+  }
+
+  function generateAdminKey(length = 12) {
+    const chars =
+      "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+    let result = "";
+    for (let i = 0; i < length; i++) {
+      result += chars.charAt(Math.floor(Math.random() * chars.length));
+    }
+    return result;
+  }
+
+  // Générer une clé unique en base
+  async function generateUniqueAdminKey(): Promise<string> {
+    let unique = false;
+    let key = "";
+
+    while (!unique) {
+      key = generateAdminKey(12);
+      const existing = await dataSource
+        .select()
+        .from(tables.model)
+        .where(eq(tables.model.clientKey, key));
+      if (existing.length === 0) unique = true;
+    }
+
+    return key;
+  }
+
+  const [{ id }] = await dataSource
+    .insert(tables.model)
+    .values({ ...body, clientKey: await generateUniqueAdminKey() })
+    .returning({ id: tables.model.id });
+
+  const model = await dataSource
+    .select()
+    .from(tables.model)
+    .where(eq(tables.model.id, id));
+
+  return model[0];
 });
