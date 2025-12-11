@@ -1,0 +1,161 @@
+{
+  "editor": {
+    "titleField": {
+      "title": "Quel titre souhaitez-vous donner à votre demande d’avis ?",
+      "placeholder": "Exemple : Votre opinion nous aide à nous améliorer"
+    },
+
+    "comment": {
+      "title": "Souhaitez-vous demander un message après la note ?",
+
+      "items": {
+        "notRequired": "Oui, mais non requis",
+        "required": "Oui, obligatoirement",
+        "no": "Non merci"
+      }
+    },
+
+    "count": {
+      "title": "Combien d’avis souhaitez-vous collecter ?",
+      "items": {
+        "one": "Un seul avis",
+        "multiple": "Collecter plusieurs avis"
+      }
+    },
+
+    "addtionalInformations": {
+      "title": "Quelles informations supplémentaires souhaitez-vous collecter auprès de vos clients ?",
+      "required": "Obligatoire",
+      "items": {
+        "name": "Nom de la personne",
+        "email": "Adresse email",
+        "phone": "Numéro de téléphone",
+        "address": "Adresse"
+      }
+    },
+
+    "user": {
+      "title": "Votre adresse email"
+    },
+
+    "errors": {
+      "title": {
+        "string": "Le titre doit être un texte.",
+        "max": "Le titre ne doit pas dépasser 50 caractères."
+      },
+      "count": {
+        "number": "Veuillez renseigner correctment le nombre d'avis que vous voulez collecter.",
+        "int": "Veuillez renseigner correctment le nombre d'avis que vous voulez collecter."
+      },
+
+      "other": "Une erreur innatendue est survenue. Veuillez vérifier les informations saisies",
+
+      "rate": "La note doit être comprise entre 1 et 5. Merci de choisir une valeur valide.",
+
+      "user": { "email": "Votre adresse email est incorrecte." }
+    },
+
+    "submit": "Enregistrer"
+  },
+
+  "rate": {
+    "labels": {
+      "name": "VOtre nom",
+      "email": "Adresse email",
+      "phone": "Numéro de téléphone",
+      "address": "Adresse",
+      "comment": "Message"
+    },
+
+    "errors": {
+      "modelNotFound": "L'avis que vous souhaitez soumettre est introuvable",
+
+      "name": {
+        "required": "Veuillez saisir votre nom"
+      }
+    },
+
+    "success": {
+      "message": "Nous vous remercions sincèrement pour votre avis. Votre contribution a bien été prise en compte et nous aidera à améliorer nos services."
+    },
+
+    "prevent": "Revenir en arrière",
+    "next": "Suivant",
+    "submit": "Envoyer"
+  },
+
+  "reactions": [
+    {
+      "title": "Très mauvais",
+      "description": "L’expérience est insatisfaisante et ne répond pas aux attentes."
+    },
+    {
+      "title": "Mauvais",
+      "description": "Plusieurs problèmes rencontrés, résultat en dessous de la moyenne."
+    },
+    {
+      "title": "Moyen",
+      "description": "Acceptable, mais nécessite plusieurs améliorations."
+    },
+    {
+      "title": "Bon",
+      "description": "Globalement satisfaisant, avec quelques points perfectibles."
+    },
+    {
+      "title": "Excellent",
+      "description": "Expérience excellente, dépasse les attentes."
+    }
+  ],
+
+  "admin": {
+    "model": {
+      "errors": {
+        "notFound": "Aucun feedback trouvé."
+      }
+    }
+  },
+
+  "login": {
+    "title": "Bienvenue sur Sya",
+    "description": "Saisissez votre adresse email pour accéder à vos feedback.",
+    "submit": "Se connecter",
+
+    "errors": {
+      "invalidEmail": "L'adresse email saisie est incorrecte",
+      "fieldRequired": "Ce champs est requis",
+      "invalidCredentials": "Les identifiants saisies sont incorrectes",
+      "global": "Nous avons rencontrer une erreur dans le traitement de la demande. Veuillez vérifier les informations saisies"
+    },
+
+    "register": {
+      "text": "Vous n'avez pas de compte ?",
+      "btn": "S'inscrire"
+    },
+
+    "items": {
+      "email": "Adresse mail",
+      "password": "Mot de passe"
+    }
+  },
+
+  "model": {
+    "no_title": "Sans titre",
+
+    "table": {
+      "options": {
+        "view_rates": "Voire les feedbacks",
+        "copy_public_link": "Copier le lien public"
+      },
+      "items": {
+        "title": "Titre",
+        "createdAt": "Date",
+        "feedbacks": "Feedbacks",
+        "clientKey": "Numéro"
+      }
+    }
+  },
+
+  "words": {
+    "copied": "Copié"
+  }
+}

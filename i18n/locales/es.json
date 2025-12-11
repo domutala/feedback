@@ -1,0 +1,157 @@
+{
+  "welcome": "Bienvenido",
+
+  "dashboard": {
+    "empty": "No hay ofertas de empleo que publicar"
+  },
+
+  "errors": {
+    "fieldRequired": "Este campo es obligatorio",
+    "invalidEmail": "Correo electrónico inválido"
+  },
+
+  "sectors": {
+    "agriculture": "Agricultura",
+    "food_industry": "Industria alimentaria",
+    "construction": "Construcción",
+    "manufacturing": "Manufactura",
+    "energy": "Energía",
+    "it_technology": "Tecnologías de la información",
+    "telecommunications": "Telecomunicaciones",
+    "finance_insurance": "Finanzas y seguros",
+    "real_estate": "Bienes raíces",
+    "wholesale_retail": "Comercio mayorista y minorista",
+    "transport_logistics": "Transporte y logística",
+    "hospitality_tourism": "Hostelería y turismo",
+    "healthcare": "Salud",
+    "education": "Educación",
+    "public_administration": "Administración pública",
+    "research_development": "Investigación y desarrollo",
+    "arts_entertainment": "Artes, cultura y entretenimiento",
+    "environment": "Medio ambiente",
+    "non_profit": "Organizaciones sin fines de lucro",
+    "consulting_services": "Consultoría y servicios empresariales"
+  },
+
+  "register": {
+    "goback": "Volver",
+
+    "login": {
+      "btn": "Iniciar sesión"
+    },
+
+    "success": {
+      "title": "¡Cuenta creada con éxito! Bienvenido a Wink 🎉",
+      "description": "Gestiona tus contrataciones de manera eficiente y empieza a encontrar los mejores talentos ahora."
+    },
+
+    "errors": {
+      "userWithEmailAlreadyExists": "Ya existe un usuario con este correo electrónico",
+      "global": "Ocurrió un error al procesar la solicitud. Por favor verifica la información ingresada"
+    },
+
+    "one": {
+      "title": "Conozcámonos",
+      "submit": "Continuar",
+
+      "items": {
+        "email": "Correo electrónico",
+        "firstName": "Nombre",
+        "lastName": "Apellido",
+
+        "password": {
+          "label": "Contraseña",
+
+          "errors": {
+            "type": "La contraseña ingresada es incorrecta"
+          }
+        },
+
+        "avatar": {
+          "label": "Foto de perfil",
+          "add": "Agregar foto",
+          "update": "Actualizar foto",
+          "remove": "Eliminar",
+          "info": "en formato *.png o *.jpeg, máximo 5MB",
+
+          "errors": {
+            "type": "Por favor seleccione un archivo JPEG o PNG.",
+            "size": "Se excedió el tamaño máximo. Máximo 5MB"
+          }
+        }
+      }
+    },
+
+    "two": {
+      "title": "Crea tu espacio",
+      "submit": "Continuar",
+      "items": {
+        "name": {
+          "label": "Nombre de la empresa",
+          "placeholder": "Ingrese el nombre de su empresa"
+        },
+
+        "description": {
+          "label": "Descripción de la empresa",
+          "placeholder": "Describa brevemente su empresa:\n * Historia y cifras clave\n * Productos o servicios\n * Cultura y valores"
+        },
+
+        "website": {
+          "label": "Sitio web",
+          "placeholder": "su-empresa.com",
+          "errors": {
+            "type": "La URL ingresada no es válida"
+          }
+        },
+
+        "address": {
+          "label": "Dirección de la sede",
+          "placeholder": "Ingrese la dirección de su empresa"
+        },
+
+        "sector": {
+          "label": "Sector de actividad",
+          "placeholder": "Ingrese el sector de actividad de su empresa"
+        },
+
+        "logo": {
+          "label": "Logo de la empresa",
+          "add": "Agregar foto",
+          "update": "Actualizar foto",
+          "remove": "Eliminar",
+          "info": "en formato *.png o *.jpeg",
+
+          "errors": {
+            "type": "Por favor seleccione un archivo JPEG o PNG.",
+            "size": "Se excedió el tamaño máximo. Máximo 5MB"
+          }
+        }
+      }
+    },
+
+    "three": {
+      "title": "Para conocerte mejor"
+    }
+  },
+
+  "login": {
+    "title": "Bienvenido a Wink",
+    "description": "Ingrese sus credenciales para acceder a su cuenta.",
+    "submit": "Iniciar sesión",
+
+    "errors": {
+      "invalidCredentials": "Las credenciales ingresadas son incorrectas",
+      "global": "Ocurrió un error al procesar la solicitud. Por favor verifica la información ingresada"
+    },
+
+    "register": {
+      "text": "¿No tienes una cuenta?",
+      "btn": "Regístrate"
+    },
+
+    "items": {
+      "email": "Correo electrónico",
+      "password": "Contraseña"
+    }
+  }
+}
