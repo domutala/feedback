@@ -20,7 +20,7 @@ const fields: AuthFormField[] = [
 const schema = v.object({
   email: v.pipe(
     v.string($i18n.t("login.errors.fieldRequired")),
-    v.email($i18n.t("login.errors.invalidEmail"))
+    v.email($i18n.t("login.errors.invalidEmail")),
   ),
 });
 
@@ -50,14 +50,11 @@ onMounted(() => {
 </script>
 
 <template>
-  <div
-    v-if="initing"
-    class="w-screen h-screen flex items-center justify-center"
-  >
+  <div v-if="initing" class="h-screen flex items-center justify-center">
     <u-icon name="i-eos-icons-three-dots-loading" size="64" />
   </div>
 
-  <div v-else class="w-screen h-screen flex items-center justify-center">
+  <div v-else class="h-screen flex items-center justify-center">
     <UAuthForm
       :schema="schema"
       :title="$t('login.title')"

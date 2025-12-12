@@ -2,6 +2,9 @@ import { arrayContains, count, asc, desc } from "drizzle-orm";
 import { Auth } from "~~/server/database/schema";
 
 export default defineEventHandler(async (event) => {
+  const config = useRuntimeConfig(event);
+  console.log(config.public.baseUrl);
+
   const auth = event.context.auth as Auth;
   const query = getQuery<{
     page?: string;

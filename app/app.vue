@@ -1,7 +1,30 @@
 <script lang="ts" setup>
-const reactions = ["hate", "disappointed", "natural", "good", "excellent"];
-const value = ref<number>(2);
-const overReact = ref<number>();
+import { en, fr } from "@nuxt/ui/locale";
+const { locale, setLocale } = useI18n();
+
+useHead({
+  meta: [{ name: "viewport", content: "width=device-width, initial-scale=1" }],
+  link: [{ rel: "icon", href: "/favicon.ico" }],
+  htmlAttrs: {
+    lang: "en",
+  },
+});
+
+const appConfig = useAppConfig();
+const title = appConfig.site.name;
+const description = appConfig.site.description;
+
+useSeoMeta({
+  title,
+  description,
+  ogTitle: title,
+  ogDescription: description,
+  ogImage: "https://ui.nuxt.com/assets/templates/nuxt/starter-light.png",
+});
+
+onMounted(() => {
+  // useCookieConsent().init();
+});
 </script>
 
 <template>

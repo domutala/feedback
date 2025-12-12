@@ -19,6 +19,7 @@ export default defineNuxtConfig({
     databaseUrl: "",
     jwtPrivateKey: "",
     resendApiKey: "",
+    resendDomain: "",
 
     public: {
       baseUrl: "",
@@ -54,8 +55,7 @@ export default defineNuxtConfig({
 
   i18n: {
     defaultLocale: "fr",
-    // customRoutes: 'page',
-    strategy: "no_prefix",
+    strategy: "prefix_and_default",
 
     locales: [
       { code: "en", name: "English", file: "en.json", dir: "ltr" },
@@ -63,5 +63,9 @@ export default defineNuxtConfig({
       { code: "ar", name: "العربية", file: "ar.json", dir: "rtl" },
       { code: "es", name: "Español", file: "es.json", dir: "ltr" },
     ],
+
+    experimental: {
+      localeDetector: "localeDetector.ts",
+    },
   },
 });

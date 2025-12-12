@@ -2,12 +2,8 @@
 
 <template>
   <UApp>
-    <ui-header />
-
     <u-main>
       <slot />
     </u-main>
-
-    <ui-footer />
   </UApp>
 </template>

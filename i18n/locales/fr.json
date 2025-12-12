@@ -55,7 +55,12 @@
       "user": { "email": "Votre adresse email est incorrecte." }
     },
 
-    "submit": "Enregistrer"
+    "submit": "Enregistrer",
+
+    "email": {
+      "object": "Votre modèle a été créé 🎉",
+      "empty_title": "Modèle sans titre"
+    }
   },
 
   "rate": {
@@ -157,5 +162,11 @@
 
   "words": {
     "copied": "Copié"
+  },
+
+  "mail": {
+    "author": {
+      "main_team": "Équipe de {name}"
+    }
   }
 }

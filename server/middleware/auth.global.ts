@@ -19,8 +19,8 @@ export default defineEventHandler(async (event) => {
       .where(
         and(
           eq(tables.auth.id, token),
-          or(isNull(tables.auth.closed), eq(tables.auth.closed, false))
-        )
+          or(isNull(tables.auth.closed), eq(tables.auth.closed, false)),
+        ),
       );
 
     if (!auth?.length) {

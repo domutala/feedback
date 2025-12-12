@@ -20,5 +20,5 @@ export default defineEventHandler(async (event) => {
     path: "/",
   });
 
-  return { token: auth[0].id };
+  return { token: auth[0].id, user: { email: token.email } };
 });

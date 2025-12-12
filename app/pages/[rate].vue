@@ -3,11 +3,13 @@ import * as z from "zod";
 import * as _ from "lodash";
 import { additionalValidator, commentValidator } from "~/tools/modelValidation";
 
+definePageMeta({
+  layout: "rate",
+});
+
 const { data: model, status } = await useFetch(
   `/api/rate/${Use.route.params.rate}`,
-  {
-    method: "get",
-  }
+  { method: "get" },
 );
 
 const { $i18n } = useNuxtApp();
@@ -33,14 +35,15 @@ const submiting = ref(false);
 onMounted(mounted);
 function mounted() {
   if (!model.value) return;
+  console.log(model.value, "******************");
 
   const vAdditional = additionalValidator(model.value.data, $i18n.t);
   const vComment = commentValidator(model.value.data, $i18n.t);
   lastStep.value = Object.keys(vAdditional).length
     ? "additional"
     : Object.keys(vComment).length
-    ? "comment"
-    : "rate";
+      ? "comment"
+      : "rate";
 
   nexter.value.rate = () => {
     if (Object.keys(vComment).length) {
@@ -104,10 +107,10 @@ async function onSubmit() {
         success
           ? 'ui-rate-success'
           : step === 'rate'
-          ? 'ui-rate'
-          : step === 'comment'
-          ? 'ui-rate-comment'
-          : 'ui-rate-additional'
+            ? 'ui-rate'
+            : step === 'comment'
+              ? 'ui-rate-comment'
+              : 'ui-rate-additional'
       "
       v-model="value"
       class="min-h-screen max-w-lg w-full mx-auto flex flex-col items-center justify-center relative"

@@ -1,6 +1,11 @@
 import * as z from "zod";
+import { Resend } from "resend";
+import { getEmailTemplate } from "../utils/email";
 
 export default defineEventHandler(async (event) => {
+  const config = useRuntimeConfig(event);
+  const appConfig = useAppConfig(event);
+  const t = await useTranslation(event);
   const body = await readBody(event);
   const validator = z.object({
     title: z
@@ -9,7 +14,7 @@ export default defineEventHandler(async (event) => {
         z
           .string("editor.errors.title.string")
           .max(50, "editor.errors.title.max")
-          .optional()
+          .optional(),
       ),
 
     count: z
@@ -59,8 +64,8 @@ export default defineEventHandler(async (event) => {
   }
 
   function generateAdminKey(length = 12) {
-    const chars =
-      "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+    const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+    // "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
     let result = "";
     for (let i = 0; i < length; i++) {
       result += chars.charAt(Math.floor(Math.random() * chars.length));
@@ -90,10 +95,33 @@ export default defineEventHandler(async (event) => {
     .values({ ...body, clientKey: await generateUniqueAdminKey() })
     .returning({ id: tables.model.id });
 
-  const model = await dataSource
+  const [model] = await dataSource
     .select()
     .from(tables.model)
     .where(eq(tables.model.id, id));
 
-  return model[0];
+  const adminUrl = `${config.public.baseUrl}/admin/${model.id}`;
+
+  // Injecter les placeholders dans le template
+  const htmlTemplate = await getEmailTemplate("model-created", {
+    projectTitle: model.title ?? t("editor.email.empty_title"),
+    dataUrl: adminUrl,
+    companyName: appConfig.site?.name || "Feedback",
+    logoUrl: `${config.public.baseUrl}/logo.svg`,
+    currentYear: new Date().getFullYear().toString(),
+  });
+  const resend = new Resend(config.resendApiKey);
+
+  try {
+    await resend.emails.send({
+      from: `${t("mail.author.main_team", { name: appConfig.site?.name || "Feedback" })} <noreplay@${config.resendDomain}>`,
+      to: model.emails, // liste des emails
+      subject: t("editor.email.object"),
+      html: htmlTemplate,
+    });
+  } catch (error) {
+    console.error("Erreur envoi email Resend:", error);
+  }
+
+  return model;
 });

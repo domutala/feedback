@@ -8,7 +8,7 @@ const props = defineProps<{ model: Model }>();
 
 const { data: feedbacks, status } = await useFetch<Feedback[]>(
   `/api/admin/${Use.route.params.id}/feedback`,
-  { method: "get" }
+  { method: "get" },
 );
 
 const { $i18n } = useNuxtApp();
@@ -84,7 +84,7 @@ const columns = computed(() => {
               textOverflow: "ellipsis",
             },
           },
-          fb?.data.comment
+          fb?.data.comment,
         );
       },
     });
@@ -116,12 +116,43 @@ const columns = computed(() => {
 
 <template>
   <u-container class="my-16">
+    <div class="flex items-center gap-3 mb-8">
+      <ui-model-options :model :content="{ align: 'start' }">
+        <template #activator>
+          <u-button
+            icon="i-lucide-text"
+            color="neutral"
+            variant="soft"
+            class="cursor-pointer"
+          />
+        </template>
+      </ui-model-options>
+
+      <h1 class="text-2xl">
+        {{ model.title || $t("model.no_title") }}
+      </h1>
+
+      <div class="mx-auto"></div>
+
+      <UAvatarGroup>
+        <UAvatar
+          src="https://github.com/benjamincanac.png"
+          alt="Benjamin Canac"
+        />
+        <UAvatar src="https://github.com/romhml.png" alt="Romain Hamel" />
+        <UAvatar src="https://github.com/noook.png" alt="Neil Richter" />
+      </UAvatarGroup>
+
+      <u-button icon="i-lucide-user-round-plus" variant="soft" color="neutral">
+      </u-button>
+    </div>
+
     <UTable
       ref="table"
       :columns="columns"
       :data="feedbacks"
       :loading="status === 'pending'"
-      class="flex-1 border border-accented rounded-2xl"
+      class="flex-1 border border-accented rounded-lg"
     >
     </UTable>
   </u-container>

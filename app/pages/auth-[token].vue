@@ -5,7 +5,7 @@ const $i18n = useI18n();
 onMounted(async () => {
   try {
     await Store.auth.getAuth(Use.route.params.token as string);
-    Use.router.replace({ name: "admin" });
+    Use.router.replace(Use.localePath({ name: "admin" }));
   } catch (e: any) {
     throw createError({
       statusCode: 503,

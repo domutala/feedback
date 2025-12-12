@@ -20,8 +20,7 @@ const {
 });
 
 const UButton = resolveComponent("UButton");
-const UBadge = resolveComponent("UBadge");
-const UDropdownMenu = resolveComponent("UDropdownMenu");
+const UiModelOptions = resolveComponent("UiModelOptions");
 const NuxtLink = resolveComponent("NuxtLink");
 
 const i18n = useI18n();
@@ -103,24 +102,10 @@ const columns: TableColumn<Model>[] = [
       return h(
         "div",
         { class: "text-right" },
-        h(
-          UDropdownMenu,
-          {
-            content: {
-              align: "end",
-            },
-            items: getRowItems(row),
-            "aria-label": "Actions dropdown",
-          },
-          () =>
-            h(UButton, {
-              icon: "i-lucide-ellipsis-vertical",
-              color: "neutral",
-              variant: "ghost",
-              class: "ml-auto cursor-pointer",
-              "aria-label": "Actions dropdown",
-            }),
-        ),
+        h(UiModelOptions, {
+          model: row.original,
+          content: { align: "end" },
+        }),
       );
     },
   },
@@ -151,82 +136,49 @@ function sortButton(column: Column<Model>) {
     },
   });
 }
-
-function getRowItems(row: Row<Model>) {
-  return [
-    {
-      icon: "i-lucide-message-square-reply",
-      label: i18n.t("model.table.options.view_rates"),
-      to: Use.localePath({
-        name: "admin-id",
-        params: { id: row.original.id },
-      }),
-    },
-
-    {
-      icon: "i-lucide-copy",
-      label: i18n.t("model.table.options.copy_public_link"),
-      class: "cursor-pointer",
-      onSelect() {
-        copy(row.original.id);
-
-        toast.add({
-          title: i18n.t("words.copied"),
-          color: "success",
-          icon: "i-lucide-circle-check",
-        });
-      },
-    },
-
-    {
-      type: "separator",
-    },
-
-    {
-      label: "Supprimer",
-      color: "error",
-      icon: "i-lucide-trash-2",
-    },
-  ];
-}
 </script>
 
 <template>
-  <div
-    v-if="status === 'pending' && !models"
-    class="w-screen h-screen flex items-center justify-center"
-  >
-    <u-icon name="i-eos-icons-three-dots-loading" size="64" />
-  </div>
+  <UDashboardPanel>
+    <template #body>
+      <div
+        v-if="status === 'pending' && !models"
+        class="w-screen h-screen flex items-center justify-center"
+      >
+        <u-icon name="i-eos-icons-three-dots-loading" size="64" />
+      </div>
 
-  <u-container v-else class="py-10">
-    <UTable
-      :data="models?.items"
-      :columns="columns"
-      :loading="status === 'pending'"
-      :column-pinning="{ left: ['clientKey'], right: ['actions'] }"
-      class="flex-1 border border-accented rounded-lg"
-    >
-      <template #feedbacks-cell="{ row }">
-        <ui-feedback-count :model="row.original" />
-      </template>
-    </UTable>
+      <div v-else>
+        <UTable
+          :data="models?.items"
+          :columns="columns"
+          :loading="status === 'pending'"
+          :column-pinning="{ left: ['clientKey'], right: ['actions'] }"
+          class="flex-1"
+          sticky
+        >
+          <template #feedbacks-cell="{ row }">
+            <ui-feedback-count :model="row.original" />
+          </template>
+        </UTable>
 
-    <div
-      v-if="models"
-      class="flex justify-center border-t border-default pt-4 px-4"
-    >
-      <UPagination
-        :page="models.page"
-        :items-per-page="models.pageSize"
-        :total="models.total"
-        @update:page="
-          (p) => {
-            page = p;
-            refresh();
-          }
-        "
-      />
-    </div>
-  </u-container>
+        <div
+          v-if="models"
+          class="flex justify-center border-t border-default pt-4 px-4"
+        >
+          <UPagination
+            :page="models.page"
+            :items-per-page="models.pageSize"
+            :total="models.total"
+            @update:page="
+              (p) => {
+                page = p;
+                refresh();
+              }
+            "
+          />
+        </div>
+      </div>
+    </template>
+  </UDashboardPanel>
 </template>

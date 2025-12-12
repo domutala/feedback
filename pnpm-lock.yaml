@@ -26,6 +26,9 @@ importers:
       '@pinia/nuxt':
         specifier: ^0.11.3
         version: 0.11.3(magicast@0.5.1)(pinia@3.0.4(typescript@5.9.3)(vue@3.5.23(typescript@5.9.3)))
+      animejs:
+        specifier: ^4.2.2
+        version: 4.2.2
       bcryptjs:
         specifier: ^3.0.3
         version: 3.0.3
@@ -59,6 +62,9 @@ importers:
       resend:
         specifier: ^6.6.0
         version: 6.6.0
+      spltjs:
+        specifier: ^1.1.0
+        version: 1.1.0
       valibot:
         specifier: ^1.1.0
         version: 1.1.0(typescript@5.9.3)
@@ -3235,6 +3241,9 @@ packages:
 
   alien-signals@3.0.3:
     resolution: {integrity: sha512-2JXjom6R7ZwrISpUphLhf4htUq1aKRCennTJ6u9kFfr3sLmC9+I4CxxVi+McoFnIg+p1HnVrfLT/iCt4Dlz//Q==}
+
+  animejs@4.2.2:
+    resolution: {integrity: sha512-Ys3RuvLdAeI14fsdKCQy7ytu4057QX6Bb7m4jwmfd6iKmUmLquTwk1ut0e4NtRQgCeq/s2Lv5+oMBjz6c7ZuIg==}
 
   ansi-regex@5.0.1:
     resolution: {integrity: sha512-quJQXlTSUGL2LH9SUXo8VwsY4soanhgo6LNSm84E1LBcE8s3O0wpdiRzyR9z/ZZJMlMWv37qOOb9pdJlMUEKFQ==}
@@ -6482,6 +6491,9 @@ packages:
   split2@4.2.0:
     resolution: {integrity: sha512-UcjcJOWknrNkF6PLX83qcHM6KHgVKNkV62Y8a5uYDVv9ydGQVwAHMKqHdJje1VTWpljG0WYpCDhrCdAOYH4TWg==}
     engines: {node: '>= 10.x'}
+
+  spltjs@1.1.0:
+    resolution: {integrity: sha512-ACWucQPj0t5Bd8KohFLop22NpC249nTuwdmxlrG3sPL1+gscSWUtJHUL3weIEAxdF8+bKQfV2jzabl0S2dPBqg==}
 
   srvx@0.9.5:
     resolution: {integrity: sha512-nQsA2c8q3XwbSn6kTxVQjz0zS096rV+Be2pzJwrYEAdtnYszLw4MTy8JWJjz1XEGBZwP0qW51SUIX3WdjdRemQ==}
@@ -11420,6 +11432,8 @@ snapshots:
 
   alien-signals@3.0.3: {}
 
+  animejs@4.2.2: {}
+
   ansi-regex@5.0.1: {}
 
   ansi-regex@6.2.2: {}
@@ -15520,6 +15534,8 @@ snapshots:
   speakingurl@14.0.1: {}
 
   split2@4.2.0: {}
+
+  spltjs@1.1.0: {}
 
   srvx@0.9.5: {}
 

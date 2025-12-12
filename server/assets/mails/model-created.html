@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Votre lien d'accès aux données</title>
+    <style>
+      @media only screen and (max-width: 600px) {
+        .container {
+          width: 100% !important;
+          padding: 16px !important;
+        }
+        .hero {
+          padding: 20px !important;
+        }
+        .btn {
+          width: 100% !important;
+        }
+      }
+    </style>
+  </head>
+  <body
+    style="
+      margin: 0;
+      padding: 0;
+      background: #f5f7fb;
+      font-family:
+        Inter,
+        system-ui,
+        -apple-system,
+        &quot;Segoe UI&quot;,
+        Roboto,
+        &quot;Helvetica Neue&quot;,
+        Arial;
+    "
+  >
+    <span
+      style="
+        display: none;
+        visibility: hidden;
+        mso-hide: all;
+        font-size: 1px;
+        line-height: 1px;
+        opacity: 0;
+      "
+    >
+      Votre lien d'accès aux données de votre modèle est prêt.
+    </span>
+
+    <table
+      role="presentation"
+      width="100%"
+      cellspacing="0"
+      cellpadding="0"
+      style="background: #f5f7fb; padding: 32px 16px"
+    >
+      <tr>
+        <td align="center">
+          <table
+            role="presentation"
+            class="container"
+            width="680"
+            style="
+              max-width: 680px;
+              width: 100%;
+              background: #ffffff;
+              border-radius: 12px;
+              overflow: hidden;
+              box-shadow: 0 6px 30px rgba(20, 30, 50, 0.08);
+            "
+          >
+            <!-- Header -->
+            <tr>
+              <td
+                style="
+                  background: linear-gradient(90deg, #4f46e5, #06b6d4);
+                  padding: 20px 28px;
+                "
+                class="hero"
+              >
+                <table role="presentation" width="100%">
+                  <tr>
+                    <td style="vertical-align: middle">
+                      <img
+                        src="{{logoUrl}}"
+                        alt="{{companyName}} logo"
+                        width="48"
+                        style="display: inline-block; border-radius: 8px"
+                      />
+                    </td>
+                    <td
+                      style="
+                        text-align: right;
+                        color: #ffffff;
+                        font-weight: 600;
+                        font-size: 16px;
+                      "
+                    >
+                      Votre lien d'accès
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+
+            <!-- Main Content -->
+            <tr>
+              <td style="padding: 28px">
+                <h1
+                  style="
+                    margin: 0 0 12px 0;
+                    font-size: 22px;
+                    color: #0f172a;
+                    font-weight: 700;
+                  "
+                >
+                  Votre modèle a été créé 🎉
+                </h1>
+
+                <p style="margin: 0 0 18px 0; color: #475569; line-height: 1.5">
+                  Vous venez de créer un nouveau modèle :
+                  <strong>{{projectTitle}}</strong>.
+                </p>
+
+                <p style="margin: 0 0 18px 0; color: #475569; line-height: 1.5">
+                  Gardez précieusement le lien ci-dessous : il vous permet
+                  d'accéder à vos données, de visualiser les feedbacks reçus et
+                  de suivre l'évolution de votre collecte.
+                </p>
+
+                <!-- CTA -->
+                <p style="text-align: center; margin: 24px 0 8px 0">
+                  <a
+                    href="{{dataUrl}}"
+                    class="btn"
+                    style="
+                      display: inline-block;
+                      text-decoration: none;
+                      padding: 14px 22px;
+                      border-radius: 10px;
+                      background: linear-gradient(90deg, #6366f1, #06b6d4);
+                      color: #ffffff;
+                      font-weight: 700;
+                      box-shadow: 0 6px 18px rgba(99, 102, 241, 0.24);
+                    "
+                  >
+                    Accéder à vos données
+                  </a>
+                </p>
+
+                <p
+                  style="
+                    margin: 16px 0 0 0;
+                    color: #64748b;
+                    font-size: 13px;
+                    line-height: 1.5;
+                  "
+                >
+                  Si le bouton ne fonctionne pas, utilisez ce lien :
+                  <br />
+                  <a
+                    href="{{dataUrl}}"
+                    style="color: #0f172a; word-break: break-all"
+                    >{{dataUrl}}</a
+                  >
+                </p>
+
+                <hr
+                  style="
+                    border: none;
+                    border-top: 1px solid #edf2f7;
+                    margin: 26px 0;
+                  "
+                />
+
+                <p style="margin: 0; color: #475569; font-size: 13px">
+                  Cet email vous a été envoyé automatiquement après la création
+                  de votre modèle.
+                  <br />
+                  Si vous n'êtes pas à l’origine de cette action, vous pouvez
+                  simplement ignorer ce message.
+                </p>
+              </td>
+            </tr>
+
+            <!-- Footer -->
+            <tr>
+              <td
+                style="
+                  background: #0f172a;
+                  color: #c7d2fe;
+                  padding: 18px 24px;
+                  font-size: 12px;
+                "
+              >
+                <table role="presentation" width="100%">
+                  <tr>
+                    <td>
+                      <strong>{{companyName}}</strong><br />
+                      © <span id="year">{{currentYear}}</span> {{companyName}}.
+                      Tous droits réservés.
+                    </td>
+                    <td style="text-align: right">
+                      <a
+                        href="#"
+                        style="
+                          color: #c7d2fe;
+                          text-decoration: none;
+                          font-size: 12px;
+                        "
+                        >Support</a
+                      >
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>

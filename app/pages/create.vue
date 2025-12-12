@@ -6,6 +6,7 @@ import type { FeedbackModel } from "~/tools/interfaces";
 const { t: $t } = useI18n();
 const itemKeys = ["name", "email", "phone", "address"];
 const toast = useToast();
+const runtime = useRuntimeConfig();
 
 const model = ref<FeedbackModel>({
   name: true,
@@ -63,7 +64,7 @@ async function submit() {
   submiting.value = true;
 
   try {
-    await $fetch("/api/admin/model", {
+    await $fetch("/api/create", {
       method: "post",
       body: { data: model.value, emails: email.value, title: title.value },
     });
@@ -87,7 +88,7 @@ async function submit() {
 
 <template>
   <u-container class="py-36">
-    <div class="w-lg mx-auto space-y-16">
+    <div class="max-w-xl mx-auto space-y-16">
       <div>
         <p class="text-4xl mb-5">
           {{ $t("editor.titleField.title") }}

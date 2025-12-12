@@ -1,6 +1,6 @@
 export default defineAppConfig({
   site: {
-    name: "Sya",
+    name: "Feedback",
     description: "",
   },
 
